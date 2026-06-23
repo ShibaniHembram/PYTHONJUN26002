@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Movie</h1>
+
+    <input type="text" id="name" placeholder="Enter Movie Name"/>
+    <input type="text" id="category" placeholder="Enter Movie Category"/>
+    <input type="text" id="img" placeholder="Enter Image"/>
+    <input type="text" id="desc" placeholder="Enter Description"/>
+
+    <button onclick="handleSubmit()">Submit</button>
+</body>
+
+<script>
+    const handleSubmit = () => {
+        const name = document.getElementById("name").value
+        const Category = document.getElementById("category").value
+        const img = document.getElementById("img").value
+        const desc = document.getElementById("desc").value
+        
+        const movie = {
+            name: name,
+            Category: Category,
+            img: img,
+            desc: desc,
+        };
+
+        const movies = JSON.parse(localStorage.getItem("movies")) ||[];
+        movies.push(movie);
+        localStorage.setItem("movies",JSON.stringify(movies));
+    };
+</script>
+</html>
