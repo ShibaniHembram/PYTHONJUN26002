@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from events.views import welcome,addevent,getEvents
+from events.views import welcome,addevent,getEvents,getEventByID,updateEvent,deleteEvent,getEventByPaginate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('welcome/',welcome,name="welcome"),
     path('api/event/add/',addevent,name="addevent"),
     path('api/events/',getEvents,name="getEvents"),
+    path('api/event/<int:id>/',getEventByID,name="getEventByID"),
+    path('api/edit/<int:id>/',updateEvent,name="updateEvent"),
+    path('api/delete/<int:id>/',deleteEvent,name="deleteEvent"),
+    path('api/events/paginate/',getEventByPaginate,name="getEventByPaginate"),
 ]
