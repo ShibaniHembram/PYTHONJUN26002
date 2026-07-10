@@ -1,0 +1,17 @@
+nav{
+    background-color: slateblue;
+    padding: 11px;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+ul li a{
+    color: azure;
+    font-size: 29px;
+    text-decoration: none;
+    margin-inline: 24px;
+}
+div{
+    font-size: 24px;
+}
